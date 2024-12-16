@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chain Calculator</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showTab('calculator')">Калькулятор</a></li>
+            <li><a href="#" onclick="showTab('info')">Информация</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <!-- Вкладка "Калькулятор" -->
+    <div id="calculator" class="tab active">
+        <h1>Калькулятор цепочек</h1>
+        <form id="calculator-form" onsubmit="return validateInput();">
+            <div class="form-group">
+                <label for="alphabet">Алфавит:</label>
+                <input type="text" id="alphabet" name="alphabet" placeholder="Например, a,b,c" required>
+                <div class="error" id="alphabetError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="startSubstring">Начальная подцепочка:</label>
+                <input type="text" id="startSubstring" name="startSubstring" placeholder="Например, ba" required>
+                <div class="error" id="startSubstringError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="endSubstring">Конечная подцепочка:</label>
+                <input type="text" id="endSubstring" name="endSubstring" placeholder="Например, bab" required>
+                <div class="error" id="endSubstringError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="lengthMultiplier">Кратность длины:</label>
+                <input type="number" id="lengthMultiplier" name="lengthMultiplier" placeholder="Например, 3" required>
+                <div class="error" id="lengthMultiplierError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="maxLength">Максимальная длина:</label>
+                <input type="number" id="maxLength" name="maxLength" placeholder="Например, 10" required>
+                <div class="error" id="maxLengthError"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="regexInput">Регулярное выражение:</label>
+                <input type="text" id="regexInput" name="regexInput" placeholder="Например, a,b,z">
+                <div class="error" id="regexError"></div>
+            </div>
+
+            <button type="button" onclick="generateChains()">Сгенерировать</button>
+            <button type="button" onclick="generateChainsByRegex()">Сгенерировать по РВ</button>
+        </form>
+
+        <div id="result">
+            <h2>Результаты:</h2>
+            <p>Регулярное выражение: <span id="regex"></span></p>
+            <textarea id="chains" rows="10" readonly></textarea>
+            <button onclick="saveChains()">Сохранить цепочки</button>
+        </div>
+    </div>
+
+    <!-- Вкладка "Информация" -->
+    <div id="info" class="tab">
+        <h1>Информация</h1>
+        <p><strong>Автор:</strong> Перчун Владислав Сергеевич</p>
+        <p><strong>Группа:</strong> Ип-113</p>
+        <p><strong>Предмет:</strong> Теория языков и методы трансляции</p>
+        <p><strong>Задание:</strong> Написать программу, которая по предложенному описанию языка по-
+            строит регулярное выражение, задающее этот язык, и сгенерирует с
+            его помощью все цепочки языка в заданном диапазоне длин. Преду-
+            смотреть также возможность генерации цепочек по введённому пользо-
+            вателем РВ (в рамках варианта). Варианты задания языка:</p>
+        <p><strong>Вариант задания:</strong> (8) Алфавит, заданные начальная и конечная подцепочки и кратность
+            длины всех цепочек языка.</p>
+    </div>
+</main>
+
+<script src="/script.js"></script>
+</body>
+</html>

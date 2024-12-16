@@ -1,0 +1,111 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('img.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+header {
+    background-color: rgba(51, 51, 51, 0.9);
+    color: white;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    background: rgba(89, 77, 77, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);*/
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Табы */
+.tab {
+    display: none;
+}
+
+.tab.active {
+    display: block;
+}
+
+/* Формы и кнопки */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+}
+
+input, textarea, button {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 10px auto;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #0a1d37;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0a1d37;
+}
+
+/* Ошибки */
+.error {
+    color: red;
+    font-size: 12px;
+    text-align: left;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Результаты */
+#result {
+    margin-top: 20px;
+}
+
+textarea {
+    width: calc(100% - 20px);
+    margin: 0 auto;
+}
